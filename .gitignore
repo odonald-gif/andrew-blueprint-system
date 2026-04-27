@@ -1,0 +1,17 @@
+.env
+__pycache__/
+.pytest_cache/
+tmp/
+*.db
+*.log
+*.jsonl
+backend/credentials/
+backend/sandbox/auto-repair-shops-fast-site/
+data/
+token.json
+backend/token.json
+credentials.json
+backend/credentials.json
+.idea/
+.vscode/
+

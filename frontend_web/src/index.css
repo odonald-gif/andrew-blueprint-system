@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.9);
+  
+  --bg-slate: #0F172A;
+  --cyan: #00d2ff;
+  --blue: #3a7bd5;
+  --green: #00ff88;
+  --gold: #f9d423;
+  --teal: #00b4db;
+  --purple: #bb86fc;
+  --red: #ff4d6a;
+  --orange: #ffb74d;
+  
+  --surface: rgba(20, 20, 25, 0.6);
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  background: var(--bg-slate);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ─── Ambient Backgrounds ──────────────────────────── */
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  transition: background 1s ease;
+  padding-bottom: 200px; /* space for donna */
+}
+
+.bg-high-energy {
+  background: linear-gradient(to bottom, #0F172A, #0D47A1);
+}
+
+.bg-low-energy {
+  background: linear-gradient(to bottom, #0F172A, #4E342E);
+}
+
+/* ─── Cinematic Typography ───────────────────────────── */
+.title-massive {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0;
+  background: linear-gradient(to right, #fff, #8a919e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── Glass Elements ────────────────────────────────────── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pseudo element for gradient borders */
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.5), transparent);
+}
+
+/* ─── Dynamic Bar ────────────────────────────────────── */
+.dynamic-bar {
+  background: rgba(0,0,0,0.8);
+  border-radius: 20px;
+  padding: 5px 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+/* ─── Animations ────────────────────────────────────── */
+.fade-slide-up {
+  animation: fadeSlideUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeSlideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease forwards;
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+@keyframes slideInRight {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.pulse-scale {
+  animation: pulseScale 0.8s infinite alternate;
+}
+
+@keyframes pulseScale {
+  from { transform: scale(1); }
+  to { transform: scale(1.2); }
+}
+
+/* ─── Donna Persona Console ──────────────────────────── */
+.donna-console {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.donna-input-wrapper {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  margin-top: 15px;
+}
+
+.donna-input {
+  background: transparent;
+  border: none;
+  color: white;
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.donna-input:focus {
+  outline: none;
+}
+
+/* ─── Timeline ────────────────────────────────────── */
+.timeline-badge {
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* ─── Swipeable Card (Shadow Mode) ─────────────────── */
+.swipeable-card {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  touch-action: pan-y;
+}
+
+.swipe-hint {
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* ─── Buttons ────────────────────────────────────── */
+.btn-primary {
+  background: var(--green);
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.5);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn-outline.danger {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* ─── Biometric Overlay ──────────────────────────────── */
+.biometric-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-lock {
+  position: fixed;
+  bottom: 160px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background: var(--teal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,180,219,0.4);
+  cursor: pointer;
+  z-index: 99;
+}

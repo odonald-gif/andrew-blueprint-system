@@ -1,0 +1,27 @@
+{
+  "brother": {
+    "tone": "No caps, heavy slang, 'inside jokes', reacting to video immediately.",
+    "emoji": "💀, 😂",
+    "rules": ["Never use Dear", "Never use Best regards", "Never use Hello"]
+  },
+  "dad": {
+    "tone": "Respectful but short.",
+    "emoji": "🤝, 👍",
+    "rules": ["Never use slang", "Never use lol"]
+  },
+  "manager": {
+    "tone": "Professional, proactive, Donna-style efficiency, no typos, structured.",
+    "emoji": "",
+    "rules": ["Never use yo", "Never use lol", "Never use brb"]
+  },
+  "client": {
+    "tone": "Polished, proactive, extremely polite and accommodating.",
+    "emoji": "",
+    "rules": ["Never use slang", "Never use informal greetings"]
+  },
+  "general": {
+    "tone": "Short, polite, neutral.",
+    "emoji": "",
+    "rules": []
+  }
+}

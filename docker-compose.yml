@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  andrew_backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: andrew_agent_core
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/sandbox:/app/sandbox
+      - ./backend/.env:/app/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Adding privileged or specific capabilities might be needed for Playwright headless browser
+    # depending on the Oracle ARM instance.
+    ipc: host
+    
+volumes:
+  andrew_data:
